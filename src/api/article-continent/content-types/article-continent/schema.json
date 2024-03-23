@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_continents",
+  "info": {
+    "singularName": "article-continent",
+    "pluralName": "article-continents",
+    "displayName": "ArticleContinent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "key": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

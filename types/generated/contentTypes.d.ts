@@ -818,6 +818,11 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToOne',
       'api::article-category.article-category'
     >;
+    articleContinents: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::article-continent.article-continent'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -870,6 +875,39 @@ export interface ApiArticleCategoryArticleCategory
   };
 }
 
+export interface ApiArticleContinentArticleContinent
+  extends Schema.CollectionType {
+  collectionName: 'article_continents';
+  info: {
+    singularName: 'article-continent';
+    pluralName: 'article-continents';
+    displayName: 'ArticleContinent';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    key: Attribute.String & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article-continent.article-continent',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article-continent.article-continent',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -890,6 +928,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::article-category.article-category': ApiArticleCategoryArticleCategory;
+      'api::article-continent.article-continent': ApiArticleContinentArticleContinent;
     }
   }
 }

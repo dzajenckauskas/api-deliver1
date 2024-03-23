@@ -53,6 +53,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::article-category.article-category"
+    },
+    "articleContinents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article-continent.article-continent"
     }
   }
 }
