@@ -4,7 +4,8 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article"
+    "displayName": "Article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,14 +30,15 @@
       "customField": "plugin::ckeditor.CKEditor"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "slug": {
       "type": "string",
@@ -46,6 +48,11 @@
     "shortContent": {
       "type": "text",
       "required": true
+    },
+    "articleCategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article-category.article-category"
     }
   }
 }
