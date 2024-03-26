@@ -14,7 +14,7 @@ export default factories.createCoreController('api::article-category.article-cat
         const { id } = ctx.params;
         const entity = await strapi.db.query('api::article-category.article-category').findOne({
             where: { key: id },
-            populate: ['image']
+            populate: ['image', 'seo']
         });
         const sanitizedResults = await this.sanitizeOutput(entity, ctx);
 
