@@ -857,6 +857,7 @@ export interface ApiArticleCategoryArticleCategory
     name: Attribute.String;
     key: Attribute.String;
     image: Attribute.Media;
+    seo: Attribute.Component<'seo.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
