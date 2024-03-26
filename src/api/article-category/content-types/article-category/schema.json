@@ -28,6 +28,11 @@
         "videos",
         "audios"
       ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
     }
   }
 }
