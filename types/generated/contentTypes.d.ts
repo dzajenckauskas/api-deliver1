@@ -842,7 +842,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           preset: 'rich';
         }
       >;
-    images: Attribute.Media;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
     shortContent: Attribute.Text & Attribute.Required;
     articleCategory: Attribute.Relation<
@@ -855,6 +854,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToMany',
       'api::article-continent.article-continent'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
