@@ -1005,6 +1005,36 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiOfferPageOfferPage extends Schema.SingleType {
+  collectionName: 'offer_pages';
+  info: {
+    singularName: 'offer-page';
+    pluralName: 'offer-pages';
+    displayName: 'OfferPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::offer-page.offer-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::offer-page.offer-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1029,6 +1059,7 @@ declare module '@strapi/types' {
       'api::article-continent.article-continent': ApiArticleContinentArticleContinent;
       'api::guides-page.guides-page': ApiGuidesPageGuidesPage;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::offer-page.offer-page': ApiOfferPageOfferPage;
     }
   }
 }
