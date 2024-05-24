@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "singularName": "country",
+    "pluralName": "countries",
+    "displayName": "Country",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "iso2": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    },
+    "collection": {
+      "type": "boolean"
+    },
+    "destination": {
+      "type": "boolean"
+    },
+    "cities": {
+      "displayName": "cities",
+      "type": "component",
+      "repeatable": true,
+      "component": "cities.cities"
+    },
+    "continent": {
+      "type": "enumeration",
+      "enum": [
+        "Europe",
+        "Asia"
+      ]
+    }
+  }
+}

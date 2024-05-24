@@ -941,6 +941,44 @@ export interface ApiArticleContinentArticleContinent
   };
 }
 
+export interface ApiCountryCountry extends Schema.CollectionType {
+  collectionName: 'countries';
+  info: {
+    singularName: 'country';
+    pluralName: 'countries';
+    displayName: 'Country';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.seo'>;
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    iso2: Attribute.String & Attribute.Required & Attribute.Unique;
+    url: Attribute.String;
+    collection: Attribute.Boolean;
+    destination: Attribute.Boolean;
+    cities: Attribute.Component<'cities.cities', true>;
+    continent: Attribute.Enumeration<['Europe', 'Asia']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::country.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::country.country',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGuidesPageGuidesPage extends Schema.SingleType {
   collectionName: 'guides_pages';
   info: {
@@ -1057,6 +1095,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::article-category.article-category': ApiArticleCategoryArticleCategory;
       'api::article-continent.article-continent': ApiArticleContinentArticleContinent;
+      'api::country.country': ApiCountryCountry;
       'api::guides-page.guides-page': ApiGuidesPageGuidesPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::offer-page.offer-page': ApiOfferPageOfferPage;
