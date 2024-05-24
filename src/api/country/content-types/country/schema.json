@@ -31,10 +31,12 @@
       "type": "string"
     },
     "collection": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "destination": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "cities": {
       "displayName": "cities",

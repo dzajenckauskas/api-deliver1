@@ -957,8 +957,8 @@ export interface ApiCountryCountry extends Schema.CollectionType {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     iso2: Attribute.String & Attribute.Required & Attribute.Unique;
     url: Attribute.String;
-    collection: Attribute.Boolean;
-    destination: Attribute.Boolean;
+    collection: Attribute.Boolean & Attribute.DefaultTo<true>;
+    destination: Attribute.Boolean & Attribute.DefaultTo<true>;
     cities: Attribute.Component<'cities.cities', true>;
     continent: Attribute.Enumeration<['Europe', 'Asia']>;
     createdAt: Attribute.DateTime;
