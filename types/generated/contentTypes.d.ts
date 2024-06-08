@@ -960,7 +960,18 @@ export interface ApiCountryCountry extends Schema.CollectionType {
     collection: Attribute.Boolean & Attribute.DefaultTo<true>;
     destination: Attribute.Boolean & Attribute.DefaultTo<true>;
     cities: Attribute.Component<'cities.cities', true>;
-    continent: Attribute.Enumeration<['Europe', 'Asia']>;
+    continent: Attribute.Enumeration<
+      ['Europe', 'Asia', 'Oceania', 'Africa', 'North America']
+    >;
+    faqs: Attribute.Component<'faq.faq', true>;
+    fullContent: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1043,6 +1054,104 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiMovingOverseasPageMovingOverseasPage
+  extends Schema.SingleType {
+  collectionName: 'moving_overseas_pages';
+  info: {
+    singularName: 'moving-overseas-page';
+    pluralName: 'moving-overseas-pages';
+    displayName: 'MovingOverseasPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    seo: Attribute.Component<'seo.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::moving-overseas-page.moving-overseas-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::moving-overseas-page.moving-overseas-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMovingServicesPageMovingServicesPage
+  extends Schema.SingleType {
+  collectionName: 'moving_services_pages';
+  info: {
+    singularName: 'moving-services-page';
+    pluralName: 'moving-services-pages';
+    displayName: 'MovingServicesPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    seo: Attribute.Component<'seo.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::moving-services-page.moving-services-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::moving-services-page.moving-services-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMovingWithinEuropePageMovingWithinEuropePage
+  extends Schema.SingleType {
+  collectionName: 'moving_within_europe_pages';
+  info: {
+    singularName: 'moving-within-europe-page';
+    pluralName: 'moving-within-europe-pages';
+    displayName: 'MovingWithinEuropePage ';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String & Attribute.Unique;
+    seo: Attribute.Component<'seo.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::moving-within-europe-page.moving-within-europe-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::moving-within-europe-page.moving-within-europe-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOfferPageOfferPage extends Schema.SingleType {
   collectionName: 'offer_pages';
   info: {
@@ -1066,6 +1175,38 @@ export interface ApiOfferPageOfferPage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::offer-page.offer-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRelocationServicesPageRelocationServicesPage
+  extends Schema.SingleType {
+  collectionName: 'relocation_services_pages';
+  info: {
+    singularName: 'relocation-services-page';
+    pluralName: 'relocation-services-pages';
+    displayName: 'RelocationServicesPage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    seo: Attribute.Component<'seo.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::relocation-services-page.relocation-services-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::relocation-services-page.relocation-services-page',
       'oneToOne',
       'admin::user'
     > &
@@ -1098,7 +1239,11 @@ declare module '@strapi/types' {
       'api::country.country': ApiCountryCountry;
       'api::guides-page.guides-page': ApiGuidesPageGuidesPage;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::moving-overseas-page.moving-overseas-page': ApiMovingOverseasPageMovingOverseasPage;
+      'api::moving-services-page.moving-services-page': ApiMovingServicesPageMovingServicesPage;
+      'api::moving-within-europe-page.moving-within-europe-page': ApiMovingWithinEuropePageMovingWithinEuropePage;
       'api::offer-page.offer-page': ApiOfferPageOfferPage;
+      'api::relocation-services-page.relocation-services-page': ApiRelocationServicesPageRelocationServicesPage;
     }
   }
 }

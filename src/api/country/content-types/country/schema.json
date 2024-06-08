@@ -48,8 +48,24 @@
       "type": "enumeration",
       "enum": [
         "Europe",
-        "Asia"
+        "Asia",
+        "Oceania",
+        "Africa",
+        "North America"
       ]
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "faq.faq"
+    },
+    "fullContent": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

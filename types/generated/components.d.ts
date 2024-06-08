@@ -10,6 +10,25 @@ export interface CitiesCities extends Schema.Component {
   };
 }
 
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'Faq';
+  };
+  attributes: {
+    question: Attribute.String;
+    answer: Attribute.Text;
+    fullAnswer: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+  };
+}
+
 export interface SeoSeo extends Schema.Component {
   collectionName: 'components_seo_seos';
   info: {
@@ -26,6 +45,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'cities.cities': CitiesCities;
+      'faq.faq': FaqFaq;
       'seo.seo': SeoSeo;
     }
   }

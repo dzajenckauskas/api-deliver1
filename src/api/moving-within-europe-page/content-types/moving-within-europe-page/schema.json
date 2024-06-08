@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "moving_within_europe_pages",
+  "info": {
+    "singularName": "moving-within-europe-page",
+    "pluralName": "moving-within-europe-pages",
+    "displayName": "MovingWithinEuropePage ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}

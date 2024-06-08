@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "relocation_services_pages",
+  "info": {
+    "singularName": "relocation-services-page",
+    "pluralName": "relocation-services-pages",
+    "displayName": "RelocationServicesPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    }
+  }
+}
