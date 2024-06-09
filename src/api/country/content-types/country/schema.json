@@ -66,6 +66,13 @@
         "preset": "rich"
       },
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
