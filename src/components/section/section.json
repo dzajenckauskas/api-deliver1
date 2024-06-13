@@ -16,6 +16,10 @@
     },
     "sectionSubtitle": {
       "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

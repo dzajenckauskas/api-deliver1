@@ -62,6 +62,7 @@ export interface SectionSection extends Schema.Component {
     sectionCards: Attribute.Component<'section-card.section-card', true>;
     sectionTitle: Attribute.String;
     sectionSubtitle: Attribute.String;
+    active: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
