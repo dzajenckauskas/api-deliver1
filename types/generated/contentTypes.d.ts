@@ -972,7 +972,9 @@ export interface ApiCountryCountry extends Schema.CollectionType {
           preset: 'rich';
         }
       >;
-    images: Attribute.Media;
+    cardsSection: Attribute.Component<'section.section'>;
+    iconsSection: Attribute.Component<'section.section'>;
+    listSection: Attribute.Component<'section.section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_section_card_section_cards",
+  "info": {
+    "displayName": "SectionCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "shortContent": {
+      "type": "text"
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "richText": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
