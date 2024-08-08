@@ -14,10 +14,10 @@ export interface FaqFaq extends Schema.Component {
   collectionName: 'components_faq_faqs';
   info: {
     displayName: 'Faq';
+    description: '';
   };
   attributes: {
     question: Attribute.String;
-    answer: Attribute.Text;
     fullAnswer: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',

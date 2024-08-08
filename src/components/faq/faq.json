@@ -1,15 +1,13 @@
 {
   "collectionName": "components_faq_faqs",
   "info": {
-    "displayName": "Faq"
+    "displayName": "Faq",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "question": {
       "type": "string"
-    },
-    "answer": {
-      "type": "text"
     },
     "fullAnswer": {
       "type": "customField",
