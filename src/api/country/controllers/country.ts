@@ -63,6 +63,11 @@ export default factories.createCoreController('api::country.country', ({ strapi 
                     },
                 },
             },
+            videoSection: {
+                populate: {
+                    video: true,
+                },
+            },
         };
 
         // Find the entity with the specified URL and populate the necessary fields

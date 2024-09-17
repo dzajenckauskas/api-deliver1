@@ -975,6 +975,7 @@ export interface ApiCountryCountry extends Schema.CollectionType {
     cardsSection: Attribute.Component<'section.section'>;
     iconsSection: Attribute.Component<'section.section'>;
     listSection: Attribute.Component<'section.section'>;
+    videoSection: Attribute.Component<'video-section.video-section'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

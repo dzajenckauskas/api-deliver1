@@ -78,6 +78,18 @@ export interface SeoSeo extends Schema.Component {
   };
 }
 
+export interface VideoSectionVideoSection extends Schema.Component {
+  collectionName: 'components_video_section_video_sections';
+  info: {
+    displayName: 'Video section';
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.Text;
+    video: Attribute.Media;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -86,6 +98,7 @@ declare module '@strapi/types' {
       'section-card.section-card': SectionCardSectionCard;
       'section.section': SectionSection;
       'seo.seo': SeoSeo;
+      'video-section.video-section': VideoSectionVideoSection;
     }
   }
 }
