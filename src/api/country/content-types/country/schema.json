@@ -81,6 +81,11 @@
       "type": "component",
       "repeatable": false,
       "component": "section.section"
+    },
+    "videoSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "video-section.video-section"
     }
   }
 }
