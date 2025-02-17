@@ -1,57 +1,66 @@
-# 🚀 Getting started with Strapi
+# API Deliver1 - Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+## Overview
+API Deliver1 is the backend system for Deliver1, an international moving service offering door-to-door shipping via sea, road, and air. This project is built with Strapi CMS to manage content and provide a robust API for the frontend application.
 
-### `develop`
+Website: [www.api.deliver1.co.uk](https://www.api.deliver1.co.uk)
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+## Tech Stack
+- **Backend:** Strapi CMS (Headless CMS)
+- **Database:** PostgreSQL
+- **Authentication:** JWT-based authentication
+- **Deployment:** VPS (Linux-based)
 
-```
-npm run develop
-# or
-yarn develop
-```
+## Features
+- **Custom API endpoints** to manage shipping services and customer bookings.
+- **Admin panel** for content and order management.
+- **Multi-role user authentication** for admins and customers.
+- **SEO-friendly content management** for better discoverability.
+- **Secure REST API** with authentication and role-based permissions.
 
-### `start`
+## Setup & Installation
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 16.x)
+- npm or yarn
+- PostgreSQL
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+### Installation Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/dzajenckauskas/api-deliver1.git
+   cd api-deliver1
+   ```
+2. Install dependencies:
+   ```sh
+   npm install  # or yarn install
+   ```
+3. Set up environment variables:
+   - Create a `.env` file in the root directory.
+   - Add necessary environment variables (e.g., database connection, Strapi admin credentials).
+4. Run database migrations and seed data if necessary.
+5. Start the development server:
+   ```sh
+   npm run develop  # or yarn develop
+   ```
+6. Access the Strapi admin panel at `http://localhost:1337/admin`.
 
-```
-npm run start
-# or
-yarn start
-```
+## Deployment
+- The project is deployed on a VPS with Nginx as a reverse proxy.
+- Uses **PM2** for process management.
+- CI/CD automation with **GitHub Actions**.
 
-### `build`
+## Future Improvements
+- Implement **GraphQL API** support.
+- Add **multi-language content management**.
+- Enhance **security and performance** optimizations.
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+## Contributing
+Contributions are welcome! Feel free to fork the repo, submit issues, or suggest improvements.
 
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## License
+This project is licensed under the MIT License.
 
 ---
+For any inquiries or collaborations, reach out via [GitHub](https://github.com/dzajenckauskas/).
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
